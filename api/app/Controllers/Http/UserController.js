@@ -8,7 +8,7 @@ class UserController {
     {
         UserRepository.store(request.all());
     }
-    
+
     login({ request })
     {
         console.log('login');
