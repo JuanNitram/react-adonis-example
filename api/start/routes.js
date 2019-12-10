@@ -1,17 +1,13 @@
 'use strict'
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use('Route');
 
 Route.group(() => {
-    Route.group(() => {
-    
-        Route.post('/register', 'UserController.register');
-        Route.post('/login', 'UserController.login');
 
-    }).prefix('auth');
-    
-    Route.resource('/products', 'ProductsController');
+    Route.post('/auth/register', 'UserController.register');
+    Route.post('/auth/login', 'UserController.login');
+
+    Route.get('/places', 'PlaceController.index');
+
 }).prefix('api/v1');
-
-Route.on('/').render('welcome')

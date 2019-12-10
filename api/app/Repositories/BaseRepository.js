@@ -7,14 +7,19 @@ class BaseRepository {
     this.model = model;
   }
 
+  async all(relations = [])
+  {
+    return await this.model.query().fetch();
+  }
+
   async findOrFail(id, relations = [])
   {
-    await this.model.findOrFail(id).loadMany(relations);
+    return await this.model.findOrFail(id).with(relations);
   }
 
   async store(attributes)
   {
-    await this.model.create(attributes);
+    return await this.model.create(attributes);
   }
 
 }
