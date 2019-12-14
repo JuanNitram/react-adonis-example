@@ -16,9 +16,11 @@ const PlaceRepository = use('App/Repositories/PlaceRepository');
 
 class PlaceSeeder {
   async run () {
-    let place = await Factory.model('App/Models/Place').make();
-    PlaceRepository.store(place.$attributes);
+    for(let i = 0; i < 20; i++){
+      let place = await Factory.model('App/Models/Place').make();
+      await PlaceRepository.store(place.$attributes);
+    }
   }
 }
 
-module.exports = PlaceSeeder
+module.exports = PlaceSeeder;
