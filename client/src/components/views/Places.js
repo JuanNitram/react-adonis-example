@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { fetchPlaces } from '../../store/actions/placesActions';
 
 class Places extends React.Component {
   constructor(props) {
@@ -6,7 +8,7 @@ class Places extends React.Component {
   }
 
   componentDidMount = () => {
-
+    this.props.dispatch(fetchPlaces());
   }
 
   render = () => (
@@ -16,4 +18,10 @@ class Places extends React.Component {
   );
 }
 
-export default Places;
+const mapStateToProps = state => ({
+  places: state.places.items,
+  laoding: state.places.loading,
+  error: state.places.errors,
+});
+
+export default connect(mapStateToProps)(Places);
