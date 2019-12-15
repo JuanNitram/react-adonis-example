@@ -1,15 +1,19 @@
 import React from 'react';
 
-class Products extends React.Component {
+class Places extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  componentDidMount = () => {
+
+  }
+
   render = () => (
       <div>
-        <h1>Products</h1>
+        <h1>Places</h1>
       </div>
   );
 }
 
-export default Products;
+export default Places;
