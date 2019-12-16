@@ -8,7 +8,7 @@ class PlaceController {
   {
       return response.json({
           'success': true,
-          'data': await PlaceRepository.all()
+          'places': await PlaceRepository.all()
       });
   }
 

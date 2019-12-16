@@ -12,9 +12,9 @@ class Places extends React.Component {
   }
 
   render = () => (
-      <div>
-        <h1>Places</h1>
-      </div>
+    <div class="container mx-auto h-screen">
+
+    </div>
   );
 }
 
